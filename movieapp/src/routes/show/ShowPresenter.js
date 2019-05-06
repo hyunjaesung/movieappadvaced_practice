@@ -1,18 +1,17 @@
 import Proptypes from "proptypes";
 
-
-const MoviePresenter = ({nowplaying,
-    upcoming,
+const ShowPresenter = ({topRated,
+    latest,
     popular,
     error,
     loading}) => null;
 
-MoviePresenter.Proptypes ={
-    nowplaying:Proptypes.array,
-    upcoming:Proptypes.array,
+ShowPresenter.Proptypes ={
+    topRated:Proptypes.array,
+    latest:Proptypes.array,
     popular:Proptypes.array,
     error:Proptypes.string,
     loading:Proptypes.bool.isRequired
 }
 
-export default MoviePresenter;
+export default ShowPresenter;

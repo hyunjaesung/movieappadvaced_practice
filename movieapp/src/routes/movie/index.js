@@ -1,3 +1,3 @@
-import MovieContainer from "./MovieContainer";
+import SearchContainer from "./SearchContainer";
 
-export default MovieContainer;
+export default SearchContainer;

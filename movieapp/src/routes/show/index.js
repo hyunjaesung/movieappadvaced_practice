@@ -1,1 +1,3 @@
-export default () => "show";
+import ShowContainer from "./ShowContainer";
+
+export default ShowContainer;
