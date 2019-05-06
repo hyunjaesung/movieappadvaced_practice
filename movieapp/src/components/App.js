@@ -2,9 +2,12 @@ import React from 'react';
 import Router from "./Router";
 import GlobalStyles from "./GlobalStyle";
 
+
+
 function App() {
   return (
     <>
+    
       <GlobalStyles/>
       <Router />
     </>
