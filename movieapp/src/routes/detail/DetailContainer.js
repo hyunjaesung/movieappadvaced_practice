@@ -8,6 +8,8 @@ class DetailContainer extends React.Component{
         loading:false
     }
 
+    
+
     render(){
         const {result,
             error,
