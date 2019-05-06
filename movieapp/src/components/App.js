@@ -5,13 +5,12 @@ import GlobalStyles from "./GlobalStyle";
 
 
 function App() {
-  return (
+ return (
     <>
-    
       <GlobalStyles/>
       <Router />
     </>
-  );
+  )
 }
 
 export default App;

@@ -1,5 +1,5 @@
 import React from "react";
-import movie from "../routes/movie.js"
+import movie from "../routes/movie"
 import show from "../routes/show";
 import search from "../routes/search";
 import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
