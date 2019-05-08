@@ -8,19 +8,24 @@ class SearchContainer extends React.Component {
     showResult: null,
     searchTerm: "",
     error: null,
-    loading: false,
-    _handleSubmit: null
+    loading: false
   };
 
-  componentDidMount() {
-    this._handleSubmit();
-  }
-
-  _handleSubmit = () => {
+  _handleSubmit = event => {
+    event.preventDefault();
     const { searchTerm } = this.state;
+    console.log("submitted!");
     if (searchTerm !== "") {
       this._getSearchData();
     }
+  };
+
+  _updateTerm = event => {
+    const {
+      target: { value }
+    } = event;
+    // event 안의 target에는 input 태그들어가있음
+    this.setState({ searchTerm: value });
   };
 
   _getSearchData = async () => {
@@ -42,15 +47,7 @@ class SearchContainer extends React.Component {
   };
 
   render() {
-    const {
-      movieResult,
-      showResult,
-      searchTerm,
-      error,
-      loading,
-      _handleSubmit
-    } = this.state;
-    console.log(this.state);
+    const { movieResult, showResult, searchTerm, error, loading } = this.state;
     return (
       <SearchPresenter
         movieResult={movieResult}
@@ -58,7 +55,10 @@ class SearchContainer extends React.Component {
         searchTerm={searchTerm}
         error={error}
         loading={loading}
-        _handleSubmit={_handleSubmit}
+        //함수들은 state에 넣지않았는데 저리불러와서 에러,..
+
+        _handleSubmit={this._handleSubmit}
+        _updateTerm={this._updateTerm}
       />
     );
   }

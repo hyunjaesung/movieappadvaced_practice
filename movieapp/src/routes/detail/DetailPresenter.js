@@ -1,13 +1,11 @@
-import Proptypes from "proptypes";
+import propTypes from "prop-types";
 
-const DetailPresenter = ({result,
-    error,
-    loading}) => null;
+const DetailPresenter = ({ result, error, loading }) => null;
 
-DetailPresenter.Proptypes ={
-    result:Proptypes.array,
-    error:Proptypes.string,
-    loading:Proptypes.bool.isRequired
-}
+DetailPresenter.propTypes = {
+  result: propTypes.array,
+  error: propTypes.string,
+  loading: propTypes.bool.isRequired
+};
 
 export default DetailPresenter;
