@@ -3,6 +3,7 @@ import styled from "styled-components";
 import React from "react";
 import Loading from "../../components/Loading";
 import Section from "../../components/Section";
+import Message from "../../components/Message";
 
 const Container = styled.div`
   padding: 0px 20px;
@@ -54,6 +55,13 @@ const SearchPresenter = ({
             children={showResult.map(show => (
               <span key={show.id}>{show.original_name}</span>
             ))}
+          />
+        )}
+        {error && (<Message color ="red" text = {error}/>)
+
+        }
+         {movieResult && showResult && showResult.length ===0 && movieResult.length ===0 && (
+          <Message color = "grey" text = "nothing founded"
           />
         )}
       </>
