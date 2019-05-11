@@ -38,7 +38,6 @@ class DetailContainer extends React.Component {
     try {
       if (this.state.isMovie) {
         const movieRes = await movieApi.movieDetail(parsedId);
-        console.log(movieRes.data);
         this.setState({ result: movieRes.data });
       } else {
         const showRes = await showApi.showDetail(parsedId);
@@ -50,9 +49,10 @@ class DetailContainer extends React.Component {
       this.setState({ loading: false });
     }
   }
-
+ 
   render() {
     const { result, error, loading } = this.state;
+    console.log(result);
     return <DetailPresenter result={result} error={error} loading={loading} />;
   }
 }
