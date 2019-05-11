@@ -31,6 +31,8 @@ class SearchContainer extends React.Component {
   _getSearchData = async () => {
     const { searchTerm } = this.state;
     this.setState({ loading: true });
+    
+    
     try {
       const {
         data: { results: movieResult }
@@ -39,15 +41,17 @@ class SearchContainer extends React.Component {
         data: { results: showResult }
       } = await showApi.search(searchTerm);
       this.setState({ movieResult, showResult });
+      
     } catch {
       this.setState({ error: "results can't find" });
     } finally {
       this.setState({ loading: false });
     }
   };
-
+  
   render() {
     const { movieResult, showResult, searchTerm, error, loading } = this.state;
+    
     return (
       <SearchPresenter
         movieResult={movieResult}

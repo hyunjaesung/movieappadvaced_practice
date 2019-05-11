@@ -37,6 +37,7 @@ class movieContainer extends React.Component{
             error,
             loading} = this.state;
             
+        console.log(nowplaying);
        return(<MoviePresenter nowplaying={nowplaying}
         upcoming={upcoming}
         popular={popular}

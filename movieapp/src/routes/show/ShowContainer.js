@@ -31,7 +31,7 @@ async componentDidMount(){
             popular,
             error,
             loading} = this.state;
-            console.log(this.state);
+            console.log(topRated);
        return(<ShowPresenter topRated={topRated}
         airingToday={airingToday}
         popular={popular}

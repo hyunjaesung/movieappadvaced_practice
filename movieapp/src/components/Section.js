@@ -9,8 +9,11 @@ const Container = styled.div`
 const Title = styled.span``;
 const Grid = styled.div`
   margin-top: 25px;
+  margin-left:20px;
+  margin-right:20px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 125px);
+  grid-template-columns: repeat(auto-fill, 200px);
+  grid-gap:10px;
 `;
 
 const Section = ({ title, children }) => (

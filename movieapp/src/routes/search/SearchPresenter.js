@@ -4,12 +4,14 @@ import React from "react";
 import Loading from "../../components/Loading";
 import Section from "../../components/Section";
 import Message from "../../components/Message";
+import Poster from "../../components/Poster";
 
 const Container = styled.div`
   padding: 0px 20px;
 `;
 
 const Form = styled.form`
+margin-top : 30px;
   margin-bottom: 50px;
   width: 100vw;
 `;
@@ -45,7 +47,9 @@ const SearchPresenter = ({
           <Section
             title="MovieResult"
             children={movieResult.map(movie => (
-              <span key={movie.id}>{movie.title}</span>
+              <Poster key ={movie.id} id = {movie.id} imgUrl ={movie.poster_path} title={movie.original_title}
+             rating ={movie.vote_average} year={movie.release_date.substring(0,4)} isMovie={true}/>
+              
             ))}
           />
         )}
@@ -53,7 +57,8 @@ const SearchPresenter = ({
           <Section
             title="ShowResult"
             children={showResult.map(show => (
-              <span key={show.id}>{show.original_name}</span>
+              <Poster key ={show.id} id = {show.id} imgUrl ={show.poster_path} title={show.original_name} 
+            rating ={show.vote_average} year={(show.first_air_date && show.first_air_date.substring(0,4))}/>
             ))}
           />
         )}
